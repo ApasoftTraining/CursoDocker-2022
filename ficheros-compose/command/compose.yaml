@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  web-apache:
+   build: .
+   image:  comando:latest
+   container_name: apache
+   ports:
+   - "8090:80"
+   command: ["/usr/local/bin/apache.sh"] 
+   profiles:
+    - apache
+
+
+
+  web-nginx:
+   build: .
+   image:  comando:latest
+   container_name: nginx
+   ports:
+   - "8080:80"
+   command: ["/usr/local/bin/nginx.sh"]
+   profiles:
+    - nginx
+

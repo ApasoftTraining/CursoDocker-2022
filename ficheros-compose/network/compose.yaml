@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  svc-apache:
+   image: httpd
+   networks:
+     - frontal
+   ports:
+   - "80:80"
+
+  svc-tomcat:
+   image: tomcat
+   networks:
+     - frontal
+     - middleware
+   ports:
+   - 8080:8080
+
+networks:
+  frontal:
+  middleware: 

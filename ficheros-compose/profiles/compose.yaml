@@ -1,0 +1,58 @@
+services:
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    restart: always
+    ports:
+      - 9090:80
+    environment:
+      WORDPRESS_DB_HOST: db-host
+      WORDPRESS_DB_USER: wp-user
+      WORDPRESS_DB_PASSWORD: lepanto 
+      WORDPRESS_DB_NAME: wp-db
+    networks:
+      - wp-network
+    profiles:
+      - desarrollo
+      - produccion
+
+### BBDD   DESARROLLO ##
+  db-wp:
+    image: mysql
+    restart: always
+    container_name: desarrollo-bd
+    environment:
+      MYSQL_DATABASE: wp-db
+      MYSQL_USER: wp-user
+      MYSQL_PASSWORD: lepanto
+      MYSQL_ROOT_PASSWORD: lepanto 
+    networks:
+      wp-network:
+        aliases:
+         - db-host
+    profiles: 
+      - desarrollo
+
+### BBDD PRODUCCION ##
+  db-wp-prod:
+    image: mysql
+    restart: always
+    container_name: produccion-bd
+    environment:
+      MYSQL_DATABASE: wp-db
+      MYSQL_USER: wp-user
+      MYSQL_PASSWORD: lepanto
+      MYSQL_ROOT_PASSWORD: lepanto
+    networks:
+      wp-network:
+        aliases:
+         - db-host
+    profiles:
+      - produccion
+
+
+
+
+
+networks:
+  wp-network:

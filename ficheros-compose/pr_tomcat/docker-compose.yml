@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  svc-apache:
+   image: httpd
+   ports:
+   - "80:80"
+  svc-tomcat:
+   image: tomcat
+   ports:
+   - 8080:8080

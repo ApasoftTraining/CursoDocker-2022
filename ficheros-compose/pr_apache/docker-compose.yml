@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  apache:
+   image: httpd
+   ports:
+   - "80:80"
+  python:
+   image: python
+

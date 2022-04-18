@@ -1,0 +1,24 @@
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 9090:80
+    environment:
+      WORDPRESS_DB_HOST: db-wp
+      WORDPRESS_DB_USER: wp-user
+      WORDPRESS_DB_PASSWORD: lepanto 
+      WORDPRESS_DB_NAME: wp-db
+    depends_on:
+      - db-wp
+
+  db-wp:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wp-db
+      MYSQL_USER: wp-user
+      MYSQL_PASSWORD: lepanto
+      MYSQL_ROOT_PASSWORD: lepanto 

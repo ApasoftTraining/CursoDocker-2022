@@ -1,0 +1,11 @@
+services:
+  stress1:
+   image: apache-stress
+   cpu_count: 1
+   cpu_shares: 512
+   mem_limit: 100m
+  stress2:
+   image: apache-stress
+   cpu_count: 1
+   cpu_shares: 1024
+   mem_limit: 50m

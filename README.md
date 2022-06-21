@@ -1,4 +1,4 @@
-# Curso "Docker, Docker Compose y Docker Swarm desde Cero2" de  Apasoft Training
+# Curso "Docker, Docker Compose y Docker Swarm desde Cero" de  Apasoft Training
 
 ## Ficheros y ejercicios del curso de Docker de Apasoft Training en UDEMY
 

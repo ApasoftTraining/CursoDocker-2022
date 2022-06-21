@@ -2,7 +2,7 @@
 
 Ficheros y ejercicios del curso de Docker de Apasoft Training en UDEMY
 
-##Completamente actualizado en Junio del 2022
+## Completamente actualizado en Junio del 2022
 
 Si quieres inscribirte en este curso, puedes hacerlo con un gran descuento sobre el precio oficial.
 
